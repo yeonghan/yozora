@@ -1,0 +1,11 @@
+<h1>{{ post.title }}</h1>
+
+<div>{{ post.content|linebreaks }}</div>
+
+<h3>comments</h3>
+
+<div>
+	{% for comment in post.comment_set.all %}
+		<div><p>{{comment.content|linebreaks}}</div>
+	{% endfor %}
+</div>

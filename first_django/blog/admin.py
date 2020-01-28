@@ -1,7 +1,7 @@
 from django.contrib import admin
-from blog.models import blog_basic
+from blog.models import Post
 # Register your models here.
 
-@admin.register(blog_basic)
-class BlogAdmin(admin.ModelAdmin):
-    list_display = ('number','title','text','create_date','modify_date')
+@admin.register(Post)
+class Post(admin.ModelAdmin):
+    pass
