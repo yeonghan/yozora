@@ -1,0 +1,28 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Post, Comment
+
+# Create your views here.
+
+def index(request):
+    posts = Post.objects.all()
+    return render(request, "post/index.html", {
+        'posts': posts,
+    })
+
+def detail(request, post_id):
+    if request.method == 'POST':
+        post = Post.objects.get(id=post_id)
+        comment = Comment()
+        comment.post = post
+        comment.author = request.POST['author']
+        comment.content = request.POST['content']
+        comment.save()
+    else:
+        post = Post.objects.get(id=post_id)
+    
+    return render(request, "post/detail.html", {
+        'post': post,
+    })
+
+
