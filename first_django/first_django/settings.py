@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'test_woo.apps.Test_wooConfig',
 ]
 
 MIDDLEWARE = [
