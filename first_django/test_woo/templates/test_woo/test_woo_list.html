@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Django test_woo List</title>
+    </head>
+
+    <body>
+        <div id="content">
+            <h1>test_woo LIST</h1>
+            <ul>
+                {% for test_woo in object_list %}
+                    <li><a href="{% url 'detail' test_woo.id %}">{{ test_woo }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>
