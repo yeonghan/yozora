@@ -1,4 +1,4 @@
-"""first_django URL Configuration
+"""mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-#test_woo
+# from bookmark.views import BookmarkLV, BookmarkDV
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('bookmark/', include('bookmark.urls')),
     path('blog/', include('blog.urls')),
+
+    #class-based views
+    #path('bookmark/', BookmarkLV.as_view(), name='index'),
+    #path('bookmark/<int:pk>', BookmarkDV.as_view(), name='detail'),
 ]
